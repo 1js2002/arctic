@@ -3,8 +3,9 @@ const nextConfig = {
     experimental: {
         appDir: true,
     },
-    env: {
-        MONGO_URI: ''
+
+    images: {
+        domains: ["res.cloudinary.com"]
     }
 }
 
