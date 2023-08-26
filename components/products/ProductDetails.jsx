@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import StarRatings from "react-star-ratings";
-//import BreadCrumbs from "../layouts/BreadCrumbs";
+import BreadCrumbs from "../layouts/BreadCrumbs";
 
 const ProductDetails = ({ product }) => {
   const imgRef = useRef(null);
@@ -22,7 +22,7 @@ const ProductDetails = ({ product }) => {
   ];
   return (
     <>
-      {/* <BreadCrumbs breadCrumbs={breadCrumbs} /> */}
+      <BreadCrumbs className="underline" breadCrumbs={breadCrumbs} />
       <section className="bg-white py-10">
         <div className="container max-w-screen-xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-5">

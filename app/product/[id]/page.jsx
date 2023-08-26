@@ -8,8 +8,7 @@ const getProductDetails = async (id) => {
 };
 
 const ProductDetailsPage = async ({ params }) => {
-  const product = await getProductDetails(params.id);
-
+    const product = await getProductDetails(params.id)
   return <ProductDetails product={product} />;
 };
 
