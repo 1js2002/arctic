@@ -1,17 +1,17 @@
 import connectDB from "@/backend/config/connectDB";
 import Products from "@/backend/models/product";
+import APIFilters from "@/backend/utils/APIfilters";
 import { NextResponse } from "next/server";
-import APIFilters from '../../../backend/utils/APIfilters'
 
 export async function POST(request) {
   try {
     await connectDB();
-    const requestData = await request.json(); // Parse t  he incoming JSON data
+    const requestData = await request.json(); // Parse the incoming JSON data
 
-    const product = new Products.create(requestData); // Pass the parsed data to create()
+    const product = await Products.create(requestData); // Use .create as a static method
 
     return NextResponse.json(
-      { product, message: "Post created successfully" }, // Wrap product and message in an object
+      { product, message: "Post created successfully" },
       { status: 201 }
     );
   } catch (error) {
@@ -22,17 +22,24 @@ export async function POST(request) {
     );
   }
 }
-
 export async function GET(req) {
-  const queryParams = new URLSearchParams(req.url.split('?')[1]);
-  console.log(`@@@ =========> queryParams`, queryParams)
+
   try {
-    await connectDB();
-    const apiFilters = new APIFilters(Products.find(), queryParams).search();
-    const products = await apiFilters.query; // Assuming apiFilters.query returns the filtered products
-    
+    connectDB();
+    const resPerPage = 3;
+    const productsCount = await Products.countDocuments();
+  
+    const { search } = new URL(req.url);
+    console.log(search);
+    const queryParams = new URLSearchParams(search);
+    const apiFilters = new APIFilters(Products.find(), queryParams).search().filter();
+    let products = await apiFilters.query;
+    const filteredProductsCount = products.length;
+    apiFilters.pagination(resPerPage);
+    products = await apiFilters.query.clone(); // Assuming apiFilters.query returns the filtered products
+
     return NextResponse.json(
-      { products, message: "Products retrieved successfully" },
+      {  productsCount,resPerPage,filteredProductsCount, products,  message: "Products retrieved successfully" },
       { status: 200 }
     );
   } catch (error) {
