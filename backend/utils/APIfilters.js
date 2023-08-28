@@ -26,20 +26,20 @@ class APIFilters {
 
     const removeFields = ["keyword", "page"];
     removeFields.forEach((el) => delete queryCopy[el]);
-    console.log(queryCopy);
+    //console.log(queryCopy);
 
     let output = {}
     let prop = {}
 
     for(let key in queryCopy) {
-      console.log('key:', key);
+      //console.log('key:', key);
       if (!key.match(/\b(gt|gte|lt|lte)/)) {
         output[key] = queryCopy[key];
       } else {
         prop = key.split("[")[0];
-        console.log('prop:', prop);
+        //console.log('prop:', prop);
         let operator = key.match(/\[(.*)\]/)[1];
-        console.log('operator:', operator);
+       // console.log('operator:', operator);
 
         if(!output[prop]) {
           output[prop] = {};
@@ -47,7 +47,7 @@ class APIFilters {
         output[prop][`$${operator}`] = Number(queryCopy[key]);
       }
     }
-    console.log('output:', output);
+    //console.log('output:', output);
     //{price: {$gte: 100, $lte: 200}}
 
     this.query = this.query.find(output);

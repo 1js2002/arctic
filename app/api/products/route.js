@@ -30,7 +30,7 @@ export async function GET(req) {
     const productsCount = await Products.countDocuments();
   
     const { search } = new URL(req.url);
-    console.log(search);
+    //console.log(search);
     const queryParams = new URLSearchParams(search);
     const apiFilters = new APIFilters(Products.find(), queryParams).search().filter();
     let products = await apiFilters.query;
