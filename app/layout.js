@@ -2,7 +2,7 @@ import Header from "@/components/layouts/Header";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Head from "next/head";
-Head;
+import { GlobalProvider } from "./GlobalProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,14 +17,16 @@ export default function RootLayout({ children }) {
       <head>
         <title>Arctic App</title>
         <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        precedence="default"
-      />
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          precedence="default"
+        />
       </head>
       <body className={inter.className}>
-        <Header />
-        {children}
+        <GlobalProvider>
+          <Header />
+          {children}
+        </GlobalProvider>
       </body>
     </html>
   );

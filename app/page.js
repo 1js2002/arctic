@@ -13,7 +13,7 @@ const getProducts = async (searchParams) => {
     "price[lte]": searchParams.max,
     "ratings[gte]": searchParams.ratings,
   };
-
+  
   const searchQuery = queryString.stringify(urlParams);
 
   const { data } = await axios.get(
