@@ -6,8 +6,8 @@ import Search from "./Search";
 import Image from "next/image";
 import CartContext from "@/context/cartContext";
 
+
 const Header = () => {
-  
   const { cart } = useContext(CartContext);
   const cartItems = cart?.cartItems;
 
@@ -26,6 +26,7 @@ const Header = () => {
             </a>
           </div>
           <Search />
+
           <div className="flex items-center space-x-2 ml-auto">
             <Link
               href="/cart"
@@ -60,6 +61,7 @@ const Header = () => {
               </div>
             </Link>
           </div>
+
           <div className="lg:hidden ml-2">
             <button
               type="button"
