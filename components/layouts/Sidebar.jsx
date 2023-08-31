@@ -14,7 +14,7 @@ const Sidebar = () => {
       <ul className="sidebar">
         <>
           <li>
-            {" "}
+            {" "} 
             <Link
               href="/admin/products/new"
               className="block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
