@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
+import { signIn } from "next-auth/react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +21,7 @@ const Login = () => {
       redirect: false,
     });
 
-    //console.log(data);
+    console.log(data);
 
     if (data?.error) {
       toast.error(data?.error);
