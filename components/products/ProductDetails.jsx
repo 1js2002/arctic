@@ -3,8 +3,7 @@
 import React, { useRef, useContext } from "react";
 import StarRatings from "react-star-ratings";
 import BreadCrumbs from "../layouts/BreadCrumbs";
-import CartContext from "@/context/cartContext";
-
+import CartContext from "@/context/CartContext";
 
 const ProductDetails = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);

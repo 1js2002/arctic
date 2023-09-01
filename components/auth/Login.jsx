@@ -15,7 +15,6 @@ const Login = () => {
   const params = useSearchParams();
   const callBackUrl = params.get("callbackUrl");
 
-
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -24,8 +23,6 @@ const Login = () => {
       password,
       callbackUrl: callBackUrl ? parseCallbackUrl(callBackUrl) : "/",
     });
-
-    console.log(data);
 
     if (data?.error) {
       toast.error(data?.error);

@@ -1,10 +1,9 @@
-
 import ProductDetails from "@/components/products/ProductDetails";
 import axios from "axios";
 import React from "react";
 
 const getProductDetails = async (id) => {
-  const { data } = await axios.get(`http://localhost:3000/api/products/${id}`);
+  const { data } = await axios.get(`${process.env.API_URL}/api/products/${id}`);
   return data?.product;
 };
 

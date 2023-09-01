@@ -1,12 +1,8 @@
-
 import Register from "@/components/auth/Register";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import React from "react";
 
-
-export default async function RegisterPage () {
-  // const session = await getServerSession(authOptions);
-  // if (session) redirect("/");
+const RegisterPage = () => {
   return <Register />;
 };
+
+export default RegisterPage;

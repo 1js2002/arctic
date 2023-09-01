@@ -1,7 +1,7 @@
 "use client";
 
 import { AuthProvider } from "@/context/AuthContext";
-import { CartProvider } from "@/context/cartContext";
+import { CartProvider } from "@/context/CartContext";
 import { SessionProvider } from "next-auth/react";
 
 import { ToastContainer } from "react-toastify";
