@@ -5,15 +5,16 @@ import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 import { toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";
+import { parseCallbackUrl } from "@/helpers/helpers";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const params = useSearchParams();
-  const callbackUrl = params.get("callbackUrl")
 
   const router = useRouter();
- 
+  const params = useSearchParams();
+  const callBackUrl = params.get("callbackUrl");
+
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ const Login = () => {
     const data = await signIn("credentials", {
       email,
       password,
-      callbackUrl:callbackUrl
+      callbackUrl: callBackUrl ? parseCallbackUrl(callBackUrl) : "/",
     });
 
     console.log(data);

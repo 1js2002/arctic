@@ -4,7 +4,7 @@ import React, { useContext, useEffect } from "react";
 import Link from "next/link";
 import Search from "./Search";
 import Image from "next/image";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import AuthContext from "@/context/AuthContext";
 import CartContext from "@/context/cartContext";
 
@@ -37,7 +37,12 @@ const Header = () => {
             </a>
           </div>
           <Search />
-
+          <a
+            className="block px-3 py-2 text-red-800 hover:bg-red-100 hover:text-white-500 rounded-md cursor-pointer"
+            onClick={signOut}
+          >
+            Logout
+            </a>
           <div className="flex items-center space-x-2 ml-auto">
             <Link
               href="/cart"
