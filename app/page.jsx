@@ -4,6 +4,10 @@ import ListProducts from "@/components/products/ListProducts";
 
 import queryString from "query-string";
 
+export const metadata = {
+  title: "Buy It Now",
+};
+
 const getProducts = async (searchParams) => {
   const urlParams = {
     keyword: searchParams.keyword,
