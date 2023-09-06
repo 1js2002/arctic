@@ -3,6 +3,7 @@ import Stripe from "stripe";
 import Order from "../models/order";
 import ErrorHandler from "../utils/errorHandler";
 import APIFilters from "../utils/APIfilters";
+
 const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
 
 export const getOrders = async (req, res) => {

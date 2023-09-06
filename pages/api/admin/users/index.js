@@ -14,3 +14,4 @@ dbConnect();
 handler.use(isAuthenticatedUser, authorizeRoles("admin")).get(getUsers);
 
 export default handler;
+  
