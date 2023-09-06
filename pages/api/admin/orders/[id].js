@@ -5,8 +5,11 @@ import {
   authorizeRoles,
   isAuthenticatedUser,
 } from "@/backend/middlewares/auth";
-import { deleteOrder, getOrder, updateOrder } from "@/backend/controllers/OrderControllers";
-
+import {
+  deleteOrder,
+  getOrder,
+  updateOrder,
+} from "@/backend/controllers/orderControllers";
 
 const handler = nc({ onError });
 

@@ -1,8 +1,8 @@
 import Product from "../models/product";
+import APIFilters from "../utils/APIFilters";
 import { cloudinary, uploads } from "../utils/cloudinary";
 import fs from "fs";
 import ErrorHandler from "../utils/errorHandler";
-import APIFilters from "../utils/APIfilters";
 
 export const newProduct = async (req, res, next) => {
   req.body.user = req.user._id;

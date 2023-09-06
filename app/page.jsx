@@ -5,7 +5,7 @@ import ListProducts from "@/components/products/ListProducts";
 import queryString from "query-string";
 
 export const metadata = {
-  title: "Buy It Now",
+  title: "Next.js 13 Ecommerce App",
 };
 
 const getProducts = async (searchParams) => {
