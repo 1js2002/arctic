@@ -9,7 +9,7 @@ import {
   deleteOrder,
   getOrder,
   updateOrder,
-} from "@/backend/controllers/orderControllers";
+} from "@/backend/controllers/OrderControllers";
 
 const handler = nc({ onError });
 

@@ -2,7 +2,7 @@ import nc from "next-connect";
 import dbConnect from "@/backend/config/dbConnect";
 import onError from "@/backend/middlewares/errors";
 import { isAuthenticatedUser } from "@/backend/middlewares/auth";
-import { checkoutSession } from "@/backend/controllers/orderControllers";
+import { checkoutSession } from "@/backend/controllers/OrderControllers";
 
 const handler = nc({ onError });
 

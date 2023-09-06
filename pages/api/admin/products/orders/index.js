@@ -5,7 +5,7 @@ import {
   authorizeRoles,
   isAuthenticatedUser,
 } from "@/backend/middlewares/auth";
-import { getOrders } from "@/backend/controllers/orderControllers";
+import { getOrders } from "@/backend/controllers/OrderControllers";
 
 
 const handler = nc({ onError });
