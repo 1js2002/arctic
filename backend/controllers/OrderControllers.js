@@ -1,8 +1,8 @@
 import getRawBody from "raw-body";
 import Stripe from "stripe";
 import Order from "../models/order";
-import ErrorHandler from "../utils/errorHandler";
 import APIFilters from "../utils/APIfilters";
+import ErrorHandler from "../utils/errorHandler";
 
 const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
 
