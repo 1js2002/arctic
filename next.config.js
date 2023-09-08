@@ -7,7 +7,7 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   env: {
-    API_URL: "http://localhost:3000",
+    API_URL: "https://arctic-mf8ov0a56-1js2002.vercel.app",
     DB_URI:
       "mongodb+srv://user:user@cluster0.7yi0evi.mongodb.net/?retryWrites=true&w=majority",
     NEXTAUTH_SECRET: "sdssadafaasdsda",
@@ -21,7 +21,7 @@ const nextConfig = {
       "sk_test_51Nm8uoSJQJDT4weL2rlVbEcy5sIlHrnqL6LR4Xz38GIACruWumUhEkgV7l6PljxSNL64iWNd4Q4OgxYFUpbkyHF500iu85cPuX",
     STRIPE_WEBHOOK_SECRET:
       "whsec_514bf578d97d750d680fbfef6b1d18e1df9b6b76acb1ea62eb6c08edc6d66dc6",
-  },  
+  },
 };
 
 module.exports = nextConfig;
