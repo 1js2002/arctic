@@ -21,11 +21,7 @@ const nextConfig = {
       "sk_test_51Nm8uoSJQJDT4weL2rlVbEcy5sIlHrnqL6LR4Xz38GIACruWumUhEkgV7l6PljxSNL64iWNd4Q4OgxYFUpbkyHF500iu85cPuX",
     STRIPE_WEBHOOK_SECRET:
       "whsec_514bf578d97d750d680fbfef6b1d18e1df9b6b76acb1ea62eb6c08edc6d66dc6",
-  },
-  webpack: (config) => {
-    config.resolve.modules.push(`${__dirname}/utils`);
-    return config;
-  },
+  },  
 };
 
 module.exports = nextConfig;

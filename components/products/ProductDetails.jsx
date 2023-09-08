@@ -3,7 +3,7 @@
 import React, { useRef, useContext, useEffect } from "react";
 import StarRatings from "react-star-ratings";
 import BreadCrumbs from "../layouts/BreadCrumbs";
-import CartContext from "@/context/CartContext";
+import CartContext from "@/context/cartContext";
 import NewReview from "../review/NewReview";
 import OrderContext from "@/context/OrderContext";
 import Reviews from "../review/Reviews";

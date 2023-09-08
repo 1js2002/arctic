@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import StarRatings from "react-star-ratings";
 import Image from "next/image";
-import CartContext from "@/context/CartContext";
+import CartContext from "@/context/cartContext";
 
 const ProductItem = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);

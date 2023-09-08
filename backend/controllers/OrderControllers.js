@@ -1,9 +1,8 @@
 import getRawBody from "raw-body";
 import Stripe from "stripe";
 import Order from "../models/order";
-import APIFilters from "../utils/APIfilters";
 import ErrorHandler from "../utils/errorHandler";
-
+import APIFilters from "../utils/APIFilters";
 const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
 
 export const getOrders = async (req, res) => {
@@ -34,6 +33,21 @@ export const getOrder = async (req, res) => {
 
   res.status(200).json({
     order,
+  });
+};
+
+export const canReview = async (req, res) => {
+  const productId = req.query.productId;
+
+  const orders = await Order.find({
+    user: req?.user?._id,
+    "orderItems.product": productId,
+  });
+
+  let canReview = orders?.length >= 1 ? true : false;
+
+  res.status(200).json({
+    canReview,
   });
 };
 

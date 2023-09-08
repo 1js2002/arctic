@@ -3,7 +3,7 @@
 import React, { useContext, useEffect } from "react";
 import OrderItem from "./OrderItem";
 import CustomPagination from "../layouts/CustomPagination";
-import CartContext from "@/context/CartContext";
+import CartContext from "@/context/cartContext";
 import { useSearchParams, useRouter } from "next/navigation";
 
 const ListOrders = ({ orders }) => {
