@@ -3,7 +3,7 @@ import { uploads } from "../utils/cloudinary";
 import fs from "fs";
 import ErrorHandler from "../utils/errorHandler";
 import bcrypt from "bcryptjs";
-import APIFilters from "../utils/APIFilters";
+import APIFilters from "../APIFilters";
 
 export const registerUser = async (req, res) => {
   const { name, email, password } = req.body;

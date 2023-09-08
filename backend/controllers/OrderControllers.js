@@ -2,7 +2,7 @@ import getRawBody from "raw-body";
 import Stripe from "stripe";
 import Order from "../models/order";
 import ErrorHandler from "../utils/errorHandler";
-import APIFilters from "../utils/APIFilters";
+import APIFilters from "../APIFilters";
 const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
 
 export const getOrders = async (req, res) => {

@@ -1,6 +1,6 @@
 import connectDB from "@/backend/config/connectDB";
 import Products from "@/backend/models/product";
-import APIFilters from "@/backend/utils/APIFilters";
+import APIFilters from "@/backend/APIFilters";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {

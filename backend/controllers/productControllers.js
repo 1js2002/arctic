@@ -1,5 +1,5 @@
 import Product from "../models/product";
-import APIFilters from "../utils/APIFilters";
+import APIFilters from "../APIFilters";
 import { cloudinary, uploads } from "../utils/cloudinary";
 import fs from "fs";
 import ErrorHandler from "../utils/errorHandler";
