@@ -7,7 +7,7 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   env: {
-    API_URL: "https://arctic-i2mscmsjq-1js2002.vercel.app",
+    API_URL: "https://arctic-cyan.vercel.app",
     DB_URI:
       "mongodb+srv://user:user@cluster0.7yi0evi.mongodb.net/?retryWrites=true&w=majority",
     NEXTAUTH_SECRET: "sdssadafaasdsda",
